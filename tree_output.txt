@@ -1,0 +1,11 @@
+Tree constructed successfully with 8 nodes.
+
+--- Level-Order Traversal (Hierarchy Display) ---
+Level 0: CEO
+Level 1: HR, Finance, IT
+Level 2: Development, Testing
+Level 3: Frontend, Backend
+
+--- Structural Analysis ---
+Height of tree (root = level 0): 3
+Total number of departments (nodes): 8

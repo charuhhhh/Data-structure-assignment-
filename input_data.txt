@@ -1,0 +1,20 @@
+INPUT DATA
+==========
+
+1) Organisational Hierarchy (edges: Parent -> Children)
+   CEO -> HR, Finance, IT
+   IT -> Development, Testing
+   Development -> Frontend, Backend
+
+   Total departments (nodes): 8
+   (CEO, HR, Finance, IT, Development, Testing, Frontend, Backend)
+
+2) Department Names for Search (sorted alphabetically for Binary Search)
+   Index: 0=Backend, 1=CEO, 2=Development, 3=Finance,
+          4=Frontend, 5=HR, 6=IT, 7=Testing
+
+3) Search Keys Used (minimum 3 required; 4 provided)
+   - "HR"        (found, middle-ish element)
+   - "Backend"   (found, first element)
+   - "Testing"   (found, last element)
+   - "Marketing" (not present in the dataset)

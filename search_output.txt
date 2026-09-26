@@ -1,0 +1,25 @@
+Sorted Department Array:
+  [0] Backend
+  [1] CEO
+  [2] Development
+  [3] Finance
+  [4] Frontend
+  [5] HR
+  [6] IT
+  [7] Testing
+
+Searching for: "HR"
+  Linear Search : FOUND (index 5) | Comparisons = 6
+  Binary Search : FOUND (index 5) | Comparisons = 2
+
+Searching for: "Backend"
+  Linear Search : FOUND (index 0) | Comparisons = 1
+  Binary Search : FOUND (index 0) | Comparisons = 3
+
+Searching for: "Testing"
+  Linear Search : FOUND (index 7) | Comparisons = 8
+  Binary Search : FOUND (index 7) | Comparisons = 4
+
+Searching for: "Marketing"
+  Linear Search : NOT FOUND (index -1) | Comparisons = 8
+  Binary Search : NOT FOUND (index -1) | Comparisons = 4
