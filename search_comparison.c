@@ -1,8 +1,3 @@
-/* ============================================================
-   Q5(b): Store department names in a searchable representation
-   (sorted array) and compare Linear Search vs Binary Search.
-   Number of comparisons is counted and printed for each search.
-   ============================================================ */
 
 #include <stdio.h>
 #include <string.h>
@@ -16,7 +11,7 @@ char departments[N][NAME_LEN] = {
     "Frontend", "HR", "IT", "Testing"
 };
 
-/* ---------------- Linear Search ---------------- */
+
 int linearSearch(char arr[][NAME_LEN], int n, char *key, int *comparisons) {
     *comparisons = 0;
     for (int i = 0; i < n; i++) {
@@ -27,7 +22,7 @@ int linearSearch(char arr[][NAME_LEN], int n, char *key, int *comparisons) {
     return -1;
 }
 
-/* ---------------- Binary Search (iterative) ---------------- */
+
 int binarySearch(char arr[][NAME_LEN], int n, char *key, int *comparisons) {
     *comparisons = 0;
     int low = 0, high = n - 1;
@@ -65,7 +60,7 @@ int main() {
     for (int i = 0; i < N; i++)
         printf("  [%d] %s\n", i, departments[i]);
 
-    /* At least 3 test searches: best case, worst/near-worst case, not-found case */
+ 
     runSearch("HR");          /* near the middle for binary; middling for linear */
     runSearch("Backend");     /* first element sorted -> worst case for binary-ish, best for linear */
     runSearch("Testing");     /* last element -> worst case for linear */
