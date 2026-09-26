@@ -1,9 +1,4 @@
-/* ============================================================
-   Q5(a): Organisational Hierarchy using a General Tree
-   - Each node can have multiple children (general/N-ary tree)
-   - Construction is done by explicit insert() calls
-   - Displayed using Level-Order Traversal (BFS with a queue)
-   ============================================================ */
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -19,7 +14,6 @@ typedef struct Node {
     int childCount;
 } Node;
 
-/* ---- Node creation ---- */
 Node* createNode(const char *name) {
     Node *n = (Node*) malloc(sizeof(Node));
     strcpy(n->name, name);
@@ -27,12 +21,12 @@ Node* createNode(const char *name) {
     return n;
 }
 
-/* ---- Insert child under a parent ---- */
+
 void addChild(Node *parent, Node *child) {
     parent->children[parent->childCount++] = child;
 }
 
-/* ---- Simple array-based queue for level-order traversal ---- */
+
 typedef struct {
     Node* items[MAX_QUEUE];
     int front, rear;
@@ -43,7 +37,7 @@ int isEmpty(Queue *q)    { return q->front == q->rear; }
 void enqueue(Queue *q, Node *n) { q->items[q->rear++] = n; }
 Node* dequeue(Queue *q) { return q->items[q->front++]; }
 
-/* ---- Level Order Traversal (Breadth-First) ---- */
+
 void levelOrderTraversal(Node *root) {
     if (root == NULL) return;
 
@@ -71,7 +65,7 @@ void levelOrderTraversal(Node *root) {
     }
 }
 
-/* ---- Compute height of tree (for complexity/analysis part) ---- */
+
 int treeHeight(Node *root) {
     if (root == NULL || root->childCount == 0) return 0;
     int maxH = 0;
@@ -82,7 +76,7 @@ int treeHeight(Node *root) {
     return maxH + 1;
 }
 
-/* ---- Count total nodes ---- */
+
 int countNodes(Node *root) {
     if (root == NULL) return 0;
     int total = 1;
@@ -92,7 +86,7 @@ int countNodes(Node *root) {
 }
 
 int main() {
-    /* ---------- Tree Construction ---------- */
+   
     Node *CEO         = createNode("CEO");
     Node *HR          = createNode("HR");
     Node *Finance     = createNode("Finance");
@@ -114,10 +108,10 @@ int main() {
 
     printf("Tree constructed successfully with %d nodes.\n", countNodes(CEO));
 
-    /* ---------- Display Hierarchy ---------- */
+  
     levelOrderTraversal(CEO);
 
-    /* ---------- Analysis Data ---------- */
+ 
     printf("\n--- Structural Analysis ---\n");
     printf("Height of tree (root = level 0): %d\n", treeHeight(CEO));
     printf("Total number of departments (nodes): %d\n", countNodes(CEO));
